@@ -1,8 +1,11 @@
 void main(){
-    int a = Integer.parseInt(IO.readln("DIGITE UM NÚMERO: "));
-    int b = Integer.parseInt(IO.readln("DIGITE OUTRO NÚMERO: "));
 
-    int soma = a + b ;
+    float salario, aumento, novoSalario;
 
-    IO.println("O RESULTADO É: " + soma);
+     salario = Float.parseFloat(IO.readln("Digite o salário: "));
+     aumento = Float.parseFloat(IO.readln("Digite o aumento: "));
+
+    novoSalario = salario * ( 1 + aumento / 100);
+
+    IO.println("O novo salário é: " + novoSalario);
 }
