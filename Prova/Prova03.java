@@ -1,5 +1,4 @@
-// Autor: João Vitor Moreira Donato
-
+// Autor: João Vitor Moreira Donato                1 semestre
 void main() {
 
     String[] nomes = new String[20];
@@ -66,10 +65,10 @@ int cadastrarAlunos(String[] nomes, double[] medias, int total) {
         String nome;
         do {
             nome = IO.readln("Nome: ");
-            if (jaExiste(nome, nomes, total)) {
+            if (jaExiste(nome, nomes, total) == 1) {
                 IO.println("Nome repetido, tente outro.");
             }
-        } while (jaExiste(nome, nomes, total));
+        } while (jaExiste(nome, nomes, total) == 1);
 
         double media;
         do {
@@ -87,13 +86,13 @@ int cadastrarAlunos(String[] nomes, double[] medias, int total) {
     return total;
 }
 
-int Existe(String nome, String[] nomes, int total) {
+int jaExiste(String nome, String[] nomes, int total) {
     for (int i = 0; i < total; i++) {
         if (nomes[i].equalsIgnoreCase(nome)) {
-            return true;
+            return 1;
         }
     }
-    return false;
+    return 0;
 }
 
 void listarAlunos(String[] nomes, double[] medias, int total) {
